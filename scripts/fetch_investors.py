@@ -2,20 +2,21 @@
 # -*- coding: utf-8 -*-
 
 
+import os
 import requests
 import json
 import time
 import datetime
 
 
-ACCESS_TOKEN = ''
+ACCESS_TOKEN = os.environ["ANGELCO_ACCESS_TOKEN"]
 ANGELLIST_API_URL = "https://api.angel.co/1/"
 
 
 endpoint = "users"
 i = 1
 filters = ["raising"]
-st = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
+st = datetime.datetime.fromtimestamp(time.time()).strftime("%Y-%m-%d %H:%M:%S")
 f_name = "%s.txt" % (st,)
 f = open(f_name, "w+")
 print "Getting startups..."
