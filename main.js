@@ -1,6 +1,7 @@
 $(document).ready(function () {
     var pp = $("#pushpin");
 
+    var COLOR = "#26a69a";
     pp.width(pp.width());
     pp.pushpin({
         top: pp.offset().top,
@@ -49,8 +50,7 @@ $(document).ready(function () {
 
         var svg = d3.select(sel).append('svg')
             .attr('width', width)
-            .attr('height', height)
-            //.attr('style', 'padding-left: 70px;');
+            .attr('height', height);
 
         svg.append('rect')
             .attr('class', 'background')
@@ -128,7 +128,7 @@ $(document).ready(function () {
                     })
                     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + scale + ")translate(" + -x + "," + -y + ")")
                     .attr('r', '2px')
-                    .attr('fill', 'rgb(255, 145, 0)');
+                    .attr('fill', COLOR);
             });
         }
 
@@ -136,16 +136,6 @@ $(document).ready(function () {
             quality = quality || false;
 
             removeLocations();
-
-            if (quality) {
-                $('#keyTitle').html('Startups');
-                $('#keySubject').html('Density');
-                $('#keyDescription').html('Location-based density characteristics of different US raising startups.');
-            } else {
-                $('#keyTitle').html('Startups');
-                $('#keySubject').html('Quality');
-                $('#keyDescription').html('Location-based quality characteristics of different US raising startups.');
-            }
 
             d3.json('/data/startups.json', function (error, startups) {
                 var scaleFactor = 1;
@@ -185,7 +175,7 @@ $(document).ready(function () {
 
                 var colorScale = d3.scale.linear()
                     .domain([1, 7])
-                    .range(["white", "rgb(255, 145, 0)"]);
+                    .range(["white", COLOR]);
 
                 svg.selectAll('circle')
                     .data(cities).enter()
@@ -210,7 +200,7 @@ $(document).ready(function () {
                         if (quality) {
                             return colorScale(d.quality);
                         } else {
-                            return 'rgb(255, 145, 0)';
+                            return COLOR;
                         }
                     })
                     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + scale + ")translate(" + -x + "," + -y + ")")
