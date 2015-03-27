@@ -1,6 +1,7 @@
 .background {
     fill: none;
     pointer-events: all;
+    padding-left: 70px;
 }
 
 #states {

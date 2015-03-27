@@ -12,15 +12,12 @@
 </head>
 <body>
 <div>
-    <ul id="startup-dropdown" class="dropdown-content">
+    <ul id="login-dropdown" class="dropdown-content">
         <li role="presentation">
-            <a id="showDensity" role="menuitem" tabindex="-1" href="#">Density</a>
+            <a id="showDensity" role="menuitem" tabindex="-1" href="#">Settings</a>
         </li>
         <li role="presentation">
-            <a id="showDistribution" role="menuitem" tabindex="-1" href="#">Distribution</a>
-        </li>
-        <li role="presentation">
-            <a id="showQualityDensity" role="menuitem" tabindex="-1" href="#">Quality</a>
+            <a id="showDistribution" role="menuitem" tabindex="-1" href="#">Logout</a>
         </li>
     </ul>
 
@@ -37,7 +34,7 @@
                 </ul>
                 <ul class="right">
                     <li>
-                        <a class="dropdown-button" href="#!" data-activates="startup-dropdown">Startups
+                        <a class="dropdown-button" href="#!" data-activates="login-dropdown">Brandon Stiles
                             <i class="mdi-navigation-arrow-drop-down right"></i></a>
                     </li>
                 </ul>
@@ -45,53 +42,60 @@
         </nav>
     </div>
 
-    <!-- TODO: Build this out
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Job Seekers&nbsp;&nbsp;
-            <span id="jobseekers-badge" class="badge"> 34768</span> <span class="caret"></span></a>
-        <ul class="dropdown-menu" role="menu">
-            <li role="presentation"><a id="showJobseekerDensity" role="menuitem" tabindex="-1"
-                                       href="#">Density</a></li>
-            <li role="presentation"><a id="showJobseekerDistribution" role="menuitem" tabindex="-1"
-                                       href="#">Distribution</a></li>
-            <li role="presentation"><a id="showJobseekerQualityDensity" role="menuitem" tabindex="-1"
-                                       href="#">Quality</a></li>
-        </ul>
-    </li>
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Skills&nbsp;&nbsp;
-            <span id="skills-badge" class="badge"> 203</span> <span class="caret"></span></a>
-        <ul class="dropdown-menu" role="menu">
-            <li role="presentation"><a id="showSkills" role="menuitem" tabindex="-1"
-                                       href="#">Distribution</a></li>
-        </ul>
-    </li>
-    -->
+    <br/>
 
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 id="keyTitle"></h4>
-                    </div>
-                    <div class="panel-body">
-                        <h5 id="keySubject"></h5>
-
-                        <p id="keyDescription"></p>
-                    </div>
+            <div class="col s3">
+                &nbsp;
+                <div id="pushpin">
+                    <ul class="collapsible" data-collapsible="accordion">
+                        <li>
+                            <div id="expand-densities" class="collapsible-header">
+                                <i class="mdi-image-filter-drama"></i>
+                                <a href="#density">Densities</a>
+                            </div>
+                            <div class="collapsible-body"><p>Densities of different US raising startups.</p></div>
+                        </li>
+                        <li>
+                            <div id="expand-distributions" class="collapsible-header">
+                                <i class="mdi-image-filter-drama"></i>
+                                <a href="#distribution">Distribution</a>
+                            </div>
+                            <div class="collapsible-body"><p>Distributions of different US raising startups.</p></div>
+                        </li>
+                        <li>
+                            <div id="expand-qualities" class="collapsible-header">
+                                <i class="mdi-image-filter-drama"></i>
+                                <a href="#quality">Qualities</a>
+                            </div>
+                            <div class="collapsible-body"><p>Qualities of different US raising startups.</p></div>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="col-md-9">
-                <a href="#!">
-                    <div class="demeter-map"></div>
-                </a>
+            <div class="col s9">
+                <div id="density" class="section scrollspy">
+                    <div id="density-map"></div>
+                </div>
+                <br/>
+                <br/>
+
+                <div id="distribution" class="section scrollspy">
+                    <div id="distribution-map"></div>
+                </div>
+                <br/>
+                <br/>
+
+                <div id="quality" class="section scrollspy">
+                    <div id="quality-map"></div>
+                </div>
             </div>
         </div>
-        <div>© 2014. a1017 Inc. All Rights Reserved.</div>
-        <br/>
-        <br/>
+        <div class="center">© 2014. a1017 Inc. All Rights Reserved.</div>
     </div>
+    <br/>
+    <br/>
 </div>
 
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
