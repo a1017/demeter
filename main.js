@@ -1,4 +1,6 @@
-setTimeout(function () {
+$(document).ready(function () {
+    $(".dropdown-button").dropdown();
+
     var scale = 1,
         width = $('.demeter-map').width(),
         height = 500,
@@ -256,4 +258,4 @@ setTimeout(function () {
             drawStartupDensityLocations(true);
         }, 750);
     });
-}, 1000);
+});

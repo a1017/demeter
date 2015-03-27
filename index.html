@@ -2,125 +2,119 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.1.5/css/material.css" rel="stylesheet"
-          type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css">
     <link href="/style.css" rel="stylesheet" type="text/css">
-
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-
     <link rel="shortcut icon" href="/favicon.png">
+
     <title>a1017 | Demeter</title>
 </head>
 <body>
-<div class="demeter-heading">
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-map-marker"></span></a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">About</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Brandon Stiles <span
-                                class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li class="disabled"><a href="#">Logout</a></li>
-                            <li class="disabled"><a href="#">Profile</a></li>
-                            <li class="disabled"><a href="#">Account</a></li>
-                        </ul>
+<div>
+    <ul id="startup-dropdown" class="dropdown-content">
+        <li role="presentation">
+            <a id="showDensity" role="menuitem" tabindex="-1" href="#">Density</a>
+        </li>
+        <li role="presentation">
+            <a id="showDistribution" role="menuitem" tabindex="-1" href="#">Distribution</a>
+        </li>
+        <li role="presentation">
+            <a id="showQualityDensity" role="menuitem" tabindex="-1" href="#">Quality</a>
+        </li>
+    </ul>
+
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <ul class="left">
+                    <li>
+                        <a href="#!"><i class="mdi-communication-location-on"></i></a>
+                    </li>
+                    <li>
+                        <a href="#!">Demeter: A Brief Look at US Startups</a>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="active dropdown-toggle" data-toggle="dropdown">Startups&nbsp;&nbsp;
-                            <span id="startup-badge" class="badge"> 0</span> <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li role="presentation"><a id="showDensity" role="menuitem" tabindex="-1"
-                                                       href="#">Density</a></li>
-                            <li role="presentation"><a id="showDistribution" role="menuitem" tabindex="-1"
-                                                       href="#">Distribution</a></li>
-                            <li role="presentation"><a id="showQualityDensity" role="menuitem" tabindex="-1"
-                                                       href="#">Quality</a></li>
-                        </ul>
+                <ul class="right">
+                    <li>
+                        <a class="dropdown-button" href="#!" data-activates="startup-dropdown">Startups
+                            <i class="mdi-navigation-arrow-drop-down right"></i></a>
                     </li>
-
-                    <!-- TODO: Build this out
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Job Seekers&nbsp;&nbsp;
-                            <span id="jobseekers-badge" class="badge"> 34768</span> <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li role="presentation"><a id="showJobseekerDensity" role="menuitem" tabindex="-1"
-                                                       href="#">Density</a></li>
-                            <li role="presentation"><a id="showJobseekerDistribution" role="menuitem" tabindex="-1"
-                                                       href="#">Distribution</a></li>
-                            <li role="presentation"><a id="showJobseekerQualityDensity" role="menuitem" tabindex="-1"
-                                                       href="#">Quality</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Skills&nbsp;&nbsp;
-                            <span id="skills-badge" class="badge"> 203</span> <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li role="presentation"><a id="showSkills" role="menuitem" tabindex="-1"
-                                                       href="#">Distribution</a></li>
-                        </ul>
-                    </li>
-                    -->
                 </ul>
             </div>
-        </div>
-    </nav>
-</div>
-
-<br/>
-<br/>
-<br/>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 id="keyTitle"></h4>
-                </div>
-                <div class="panel-body">
-                    <h5 id="keySubject"></h5>
-
-                    <p id="keyDescription"></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-9">
-            <div class="demeter-map"></div>
-        </div>
+        </nav>
     </div>
-    <div class="demeter-footer text-center">© 2014. a1017 Inc. All Rights Reserved.</div>
+
+    <!-- TODO: Build this out
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Job Seekers&nbsp;&nbsp;
+            <span id="jobseekers-badge" class="badge"> 34768</span> <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a id="showJobseekerDensity" role="menuitem" tabindex="-1"
+                                       href="#">Density</a></li>
+            <li role="presentation"><a id="showJobseekerDistribution" role="menuitem" tabindex="-1"
+                                       href="#">Distribution</a></li>
+            <li role="presentation"><a id="showJobseekerQualityDensity" role="menuitem" tabindex="-1"
+                                       href="#">Quality</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Skills&nbsp;&nbsp;
+            <span id="skills-badge" class="badge"> 203</span> <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a id="showSkills" role="menuitem" tabindex="-1"
+                                       href="#">Distribution</a></li>
+        </ul>
+    </li>
+    -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 id="keyTitle"></h4>
+                    </div>
+                    <div class="panel-body">
+                        <h5 id="keySubject"></h5>
+
+                        <p id="keyDescription"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <a href="#!">
+                    <div class="demeter-map"></div>
+                </a>
+            </div>
+        </div>
+        <div>© 2014. a1017 Inc. All Rights Reserved.</div>
+        <br/>
+        <br/>
+    </div>
 </div>
 
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script src="//d3js.org/topojson.v1.min.js"></script>
+
 <script src="main.js"></script>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-55942865-2', 'auto');
-  ga('send', 'pageview');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-55942865-2', 'auto');
+    ga('send', 'pageview');
 </script>
 
 </body>
