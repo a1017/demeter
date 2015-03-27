@@ -245,7 +245,7 @@ $(document).ready(function () {
         }
     }
 
-    createMap('#distribution-map', 1);
+    createMap('#distribution-map', 3);
     createMap('#density-map', 2);
-    createMap('#quality-map', 3);
+    createMap('#quality-map', 1);
 });
