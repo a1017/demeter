@@ -46,51 +46,63 @@
 
     <div class="container">
         <div class="row">
-            <div class="col s3">
-                &nbsp;
-                <div id="pushpin">
-                    <ul class="collapsible" data-collapsible="accordion">
-                        <li>
-                            <div id="expand-densities" class="collapsible-header">
-                                <i class="mdi-image-filter-drama"></i>
-                                <a href="#density">Densities</a>
-                            </div>
-                            <div class="collapsible-body"><p>Densities of different US raising startups.</p></div>
-                        </li>
-                        <li>
-                            <div id="expand-distributions" class="collapsible-header">
-                                <i class="mdi-image-filter-drama"></i>
-                                <a href="#distribution">Distribution</a>
-                            </div>
-                            <div class="collapsible-body"><p>Distributions of different US raising startups.</p></div>
-                        </li>
-                        <li>
-                            <div id="expand-qualities" class="collapsible-header">
-                                <i class="mdi-image-filter-drama"></i>
-                                <a href="#quality">Qualities</a>
-                            </div>
-                            <div class="collapsible-body"><p>Qualities of different US raising startups.</p></div>
-                        </li>
-                    </ul>
+            <ul class="tabs">
+                <li class="tab col s3"><a href="#maps" class="active">Maps</a></li>
+                <li class="tab col s3"><a href="#charts">Charts</a></li>
+            </ul>
+
+            <br/>
+            <br/>
+
+            <div id="maps">
+                <div class="col s3">
+                    &nbsp;
+                    <div id="pushpin">
+                        <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+                                <div id="expand-densities" class="collapsible-header">
+                                    <i class="mdi-action-dashboard"></i>
+                                    <a href="#density">Density</a>
+                                </div>
+                                <div class="collapsible-body"><p>Densities of different US raising startups.</p></div>
+                            </li>
+                            <li>
+                                <div id="expand-distributions" class="collapsible-header">
+                                    <i class="mdi-action-swap-horiz"></i>
+                                    <a href="#distribution">Distribution</a>
+                                </div>
+                                <div class="collapsible-body"><p>Distributions of different US raising startups.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div id="expand-qualities" class="collapsible-header">
+                                    <i class="mdi-action-stars"></i>
+                                    <a href="#quality">Quality</a>
+                                </div>
+                                <div class="collapsible-body"><p>Qualities of different US raising startups.</p></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col s9">
+                    <div id="density" class="section scrollspy">
+                        <div id="density-map"></div>
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <div id="distribution" class="section scrollspy">
+                        <div id="distribution-map"></div>
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <div id="quality" class="section scrollspy">
+                        <div id="quality-map"></div>
+                    </div>
                 </div>
             </div>
-            <div class="col s9">
-                <div id="density" class="section scrollspy">
-                    <div id="density-map"></div>
-                </div>
-                <br/>
-                <br/>
-
-                <div id="distribution" class="section scrollspy">
-                    <div id="distribution-map"></div>
-                </div>
-                <br/>
-                <br/>
-
-                <div id="quality" class="section scrollspy">
-                    <div id="quality-map"></div>
-                </div>
-            </div>
+            <div id="charts" class="col s12">Coming soon!</div>
         </div>
         <div class="center">© 2014. a1017 Inc. All Rights Reserved.</div>
     </div>
