@@ -8,6 +8,7 @@ $(document).ready(function () {
     var DENSITY_SEL = '#density-map';
     var DISTRIBUTION_SEL = '#distribution-map';
     var QUALITY_SEL = '#quality-map';
+    var PP_SEL = "#pushpin";
 
     var startups = [];
     var locations = [];
@@ -23,8 +24,14 @@ $(document).ready(function () {
             x = width / 2,
             y = height / 2;
 
+        var pScale = 800;
+
+        if ($(document).width() <= 960) {
+            pScale = 600;
+        }
+
         var projection = d3.geo.albersUsa()
-            .scale(800)
+            .scale(pScale)
             .translate([width / 2, height / 2]);
 
         var path = d3.geo.path()
@@ -117,8 +124,7 @@ $(document).ready(function () {
                 })
                 .on('mouseover', function (d) {
                     console.log('yo')
-                })
-                console.log('good')
+                });
         }
 
         function drawQuality() {
@@ -253,7 +259,28 @@ $(document).ready(function () {
     }
 
     function initMaterialize() {
-        var pp = $("#pushpin");
+        var EXPAND_DENSITY_SEL = '#expand-densities';
+        var EXPAND_DISTRIBUTION_SEL = '#expand-densities';
+        var EXPAND_QUALITIES_SEL = '#expand-qualities';
+
+        var pp = $(PP_SEL);
+        var options = [
+            {
+                selector: DENSITY_SEL,
+                offset: $(DENSITY_SEL).offset().top,
+                callback: 'expandDensities()'
+            },
+            {
+                selector: DISTRIBUTION_SEL,
+                offset: $(DISTRIBUTION_SEL).offset().top,
+                callback: 'expandDistribution()'
+            },
+            {
+                selector: QUALITY_SEL,
+                offset: $(QUALITY_SEL).offset().top,
+                callback: 'expandQualities()'
+            }
+        ];
 
         pp.width(pp.width());
         pp.pushpin({
@@ -261,25 +288,19 @@ $(document).ready(function () {
             offset: 92
         });
 
-        var options = [
-            {selector: '#density-map', offset: $('#density-map').offset().top, callback: 'expandDensities()'},
-            {selector: '#distribution-map', offset: $('#distribution-map').offset().top, callback: 'expandDistribution()'},
-            {selector: '#quality-map', offset: $('#quality-map').offset().top, callback: 'expandQualities()'}
-        ];
-
         window.expandDensities = function () {
-            $('#expand-densities').click();
+            $(EXPAND_DENSITY_SEL).click();
         };
 
         window.expandDistribution = function () {
-            $('#expand-distributions').click();
+            $(EXPAND_DISTRIBUTION_SEL).click();
         };
 
         window.expandQualities = function () {
-            $('#expand-qualities').click();
+            $(EXPAND_QUALITIES_SEL).click();
         };
 
-        $('#expand-densities').click();
+        $(EXPAND_DENSITY_SEL).click();
 
         scrollFire(options);
 
